@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Titel</title>
+  </head>
+  <body>
+    <div class="wrapper">
+
+     <div class="prev"><button (click)="prev()" ><</button></div>
+      
+    <div class="picture"><img src="{{image.name}}"></div>
+
+    <div class="next"><button (click)="next()" >></button></div>
+</div>
+
+<ul class="list">
+    <li *ngFor="let picture of pictures"></li>
+  </ul>
+
+
+  
+  </body>
+</html>
