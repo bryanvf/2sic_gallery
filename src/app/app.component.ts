@@ -19,7 +19,7 @@ export class AppComponent {
   image = this.pictures[this.imgCounter];
 
   prev() {
-    
+
     if ((this.imgCounter == 0)) {
       this.imgCounter = this.pictures.length - 1;
       this.image = this.pictures[this.imgCounter];
@@ -27,17 +27,13 @@ export class AppComponent {
     } else {
       this.imgCounter--;
       this.image = this.pictures[this.imgCounter];
-      
-    }
-    console.log(this.imgCounter)
 
-    console.log(this.image)
+    }
+
   }
 
   next() {
-    console.log(this.imgCounter)
-
-    if (this.imgCounter == (this.pictures.length-1)) {
+    if (this.imgCounter == (this.pictures.length - 1)) {
       this.imgCounter = 0;
       this.image = this.pictures[this.imgCounter];
 
@@ -46,9 +42,11 @@ export class AppComponent {
       this.image = this.pictures[this.imgCounter];
 
     }
-    console.log(this.imgCounter)
 
-    console.log(this.image)
+  }
+
+  selectImage(index) {
+    this.image = this.pictures[index];
   }
 
 }
