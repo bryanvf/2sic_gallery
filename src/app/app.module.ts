@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ImageComponent } from './image/image.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatInputModule } from '@angular/material';
+import { MatButtonModule, MatInputModule, MatSnackBarModule } from '@angular/material';
 
 @NgModule({
 
@@ -20,6 +20,7 @@ import { MatButtonModule, MatInputModule } from '@angular/material';
     BrowserAnimationsModule,
     MatButtonModule,
     MatInputModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

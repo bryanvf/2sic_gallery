@@ -2,8 +2,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { delay } from 'q';
-import { identifierModuleUrl } from '@angular/compiler';
-import { TestBed } from '@angular/core/testing';
+import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -24,6 +23,7 @@ export class AppComponent implements OnInit {
   image = this.pictures[this.imgCounter];
   imageInterval: number;
 
+  constructor(private snackBar: MatSnackBar) {}
 
   ngOnInit() {
     this.startInterval();
@@ -83,6 +83,12 @@ export class AppComponent implements OnInit {
     if (titel !== '' && name !== '') {
 
       this.pictures.push({ 'titel': titel, 'name': name });
+    } else {
+      console.log('error')
+      this.snackBar.open('inputs empty', '', {
+        duration: 2000,
+      });
+      
     }
   }
 
