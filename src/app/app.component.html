@@ -8,14 +8,14 @@
   <body>
     <div class="wrapper">
 
-     <div class="prev"><button (click)="prev()" ><</button></div>
+      <button class="btn prev" (click)="prev()" ><</button>
       
-    <div class="picture"><img src="{{image.name}}"></div>
+      <div class="picture"><img src="{{image.name}}"></div>
 
-    <div class="next"><button (click)="next()" >></button></div>
-</div>
+      <button class="btn next" (click)="next()" >></button>
+  </div>
 
-<ul class="list">
+  <ul class="list">
     <li *ngFor="let picture of pictures; let i = index" (click)="selectImage(i)"></li>
   </ul>
 
