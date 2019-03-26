@@ -3,14 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Titel</title>
+    
   </head>
   <body>
+
     <div class="wrapper">
 
       <button class="btn prev" (click)="prev()" ><</button>
       
-      <div class="picture"><img src="{{image.name}}"></div>
+      <app-image [image]="image"></app-image>
 
       <button class="btn next" (click)="next()" >></button>
   </div>
@@ -19,7 +20,7 @@
     <li *ngFor="let picture of pictures; let i = index" (click)="selectImage(i)"></li>
   </ul>
 
-
   
-  </body>
+
+ </body>
 </html>
