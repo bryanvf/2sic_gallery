@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-  </head>
-  <body>
 
-    <div class="wrapper">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
 
-      <button class="btn prev" (click)="prev()" ><</button>
-      
-      <app-image [image]="image"></app-image>
+<body>
 
-      <button class="btn next" (click)="next()" >></button>
+  <div class="wrapper">
+
+    <button mat-raised-button class="btn prev" (click)="prev()"><</button>
+    <app-image [image]="image"></app-image>
+    <button mat-raised-button class="btn next" (click)="next()">></button>
   </div>
 
   <ul class="list">
     <li *ngFor="let picture of pictures; let i = index" (click)="selectImage(i)"></li>
   </ul>
+  <div class="form">
+    <div class="form-input">
+      <mat-form-field>
+        Link: <input matInput type="text" name="link" #link value=""><br>
+      </mat-form-field>
+    </div>
+    <div class="form-input">
+      <mat-form-field>
+        Titel: <input matInput type="text" name="titel" #titel value=""><br>
+      </mat-form-field>
+    </div>
+    <button class="Push" mat-raised-button (click)="addImage(link.value,titel.value)">Push</button>
+  </div>
+</body>
 
-  
-
- </body>
 </html>
