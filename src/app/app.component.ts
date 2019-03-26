@@ -1,6 +1,9 @@
 
 
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { delay } from 'q';
+import { start } from 'repl';
+import { interval } from 'rxjs';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -17,14 +20,24 @@ export class AppComponent implements OnInit {
 
   imgCounter = 0;
   image = this.pictures[this.imgCounter];
-    
+  imageInterval: number;
+
+
   ngOnInit() {
-    setInterval(() => {
-      this.next();
+    this.startInterval();
+
+  }
+
+  startInterval(){
+    this.imageInterval = window.setInterval(() => {
+      this.showNext();
     }, 2000);
   }
 
   prev() {
+    clearInterval(this.imageInterval);
+    delay(2000);
+    this.startInterval();
     if ((this.imgCounter == 0)) {
       this.imgCounter = this.pictures.length - 1;
       this.image = this.pictures[this.imgCounter];
@@ -32,10 +45,19 @@ export class AppComponent implements OnInit {
     } else {
       this.imgCounter--;
       this.image = this.pictures[this.imgCounter];
+
     }
   }
 
   next() {
+    clearInterval(this.imageInterval);
+    delay(2000);
+    this.startInterval();
+    this.showNext();
+    
+  }
+
+  showNext() {
     if (this.imgCounter == (this.pictures.length - 1)) {
       this.imgCounter = 0;
       this.image = this.pictures[this.imgCounter];
@@ -45,11 +67,16 @@ export class AppComponent implements OnInit {
     }
   }
 
-  selectImage(index) {
+  selectImage(index: number) {
+
+    
+    clearInterval(this.imageInterval);
+    delay(2000);
+    this.startInterval();
     this.image = this.pictures[index];
   }
-  
-  
+
+
 
 }
 

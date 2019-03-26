@@ -5,60 +5,46 @@
    justify-content: center;
 
    .prev button{
+      border-radius: 10px;
+      height: 40px;
+      width: 40px;
+      margin: 10px;
+    }
+
+  .next button{
     border-radius: 10px;
     height: 40px;
     width: 40px;
     margin: 10px;
-   }
+  }
 
-   .next button{
-    border-radius: 10px;
-    height: 40px;
-    width: 40px;
-    margin: 10px;
-   }
-
-
- .picture{
-   position: relative;
+  .picture{
+    position: relative;
     width: 300px;
     height: 300px;
-   }
 
-  img{
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    float: left;
-    
-   }
+    img{
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      float: left;
+    }
+  }
  }
-
- .list {
-
+ 
+.list {
   text-align:center;
   list-style:none;
   padding: 0px;
   margin: 0;
   margin-top: 5px;
   
-  
-
-  
-  
-
-li {
-background-color: black;
-width: 10px;
-height: 10px;
-border-radius: 5px;
-margin: 5px;
-display: inline-block;
-
-
-
+  li {
+    background-color: black;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    margin: 5px;
+    display: inline-block;
+  }
 }
-
-}
-
-
